@@ -21,7 +21,7 @@ module.exports = function(options) {
   }
 
   return new Promise(function(resolve, reject) {
-    var popup = window.open(url, id, `width=${width},height=${height}`);
+    var popup = window.open(url, id, 'width=' + width + ',height=' + height);
     var intervalId = null;
 
     function clearInterval() {
