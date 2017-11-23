@@ -37,8 +37,8 @@ module.exports = function(options) {
           clearInterval();
           reject(new Error('The popup was closed'));
         } else if (
-          win.document.URL.includes(location.origin) &&
-          hasRedirected(win.document.URL)
+          popup.document.URL.includes(location.origin) &&
+          hasRedirected(popup.document.URL)
         ) {
           var params = queryString.parse(
             popup.location.search.replace(/^\?/, '')
