@@ -41,7 +41,8 @@ module.exports = function(options) {
           hasRedirected(popup.document.URL)
         ) {
           var params = queryString.parse(
-            popup.location.search.replace(/^\?/, '')
+            popup.location.search.replace(/^\?/, '') ||
+              popup.location.hash.substr(1)
           );
           clearInterval();
           popup.close();
